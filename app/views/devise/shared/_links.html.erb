@@ -1,0 +1,81 @@
+<style>
+  h2{
+    text-align: center;
+  }
+  input[type=text], select, textarea  {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin: 8px 0;
+  }
+  input[type=email], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin: 8px 0;
+  }
+  input[type=password], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin: 8px 0;
+  }
+  input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+      width: 100%;
+      resize: vertical;
+      margin: 8px 0;
+  }
+
+  input[type=submit]:hover {
+      background-color: #45a049;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <%- if controller_name != 'sessions' %>
+        <%= link_to t(".sign_in"), new_session_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to t(".sign_up"), new_registration_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to t(".forgot_your_password"), new_password_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <%= link_to t('.didn_t_receive_confirmation_instructions'), new_confirmation_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+        <%= link_to t('.didn_t_receive_unlock_instructions'), new_unlock_path(resource_name) %><br />
+      <% end %>
+
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <%= link_to t('.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)), omniauth_authorize_path(resource_name, provider) %><br />
+        <% end %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+
+

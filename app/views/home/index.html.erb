@@ -1,0 +1,647 @@
+<style>
+
+    /* ---------- navbar-media ------------------------- */
+        @media screen and (min-width:768px) and (max-width: 1200px) {
+            .navbar .container {
+                width: 100%;
+            }
+            /* 漢堡選單與頁首 */
+            .navbar-toggle {
+                display: block;
+                float: right;
+                margin-right: 0;
+            }
+            .navbar-header {
+                width: 100%;
+            }
+            /* 選單隱藏區 */
+            .collapsing.navbar-collapse {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+            .collapse.navbar-collapse {
+                /* padding: 0; */
+                margin-left: -15px;
+                margin-right: -15px;
+                display: none!important;
+            }
+            .collapse.navbar-collapse.in {
+                display: block!important;
+            }
+            /* 選單項目 */
+            .navbar-nav {
+                margin-left: -15px;
+                margin-right: -15px;
+                float: none;
+            }
+            .navbar-nav.navbar-right,
+            .navbar-form.navbar-left {
+                float: none!important;
+                display: block;
+                padding: 0;
+            }
+            .nav>li {
+                position: relative;
+                display: block;
+                width: 100%;
+            }
+            .nav>li>a {
+                position: relative;
+                display: block;
+                padding: 10px 15px;
+            }
+            .navbar-nav>li>a {
+                line-height: 20px;
+            }
+            .navbar-form {
+                position: relative;
+            }
+            .navbar-form .form-group {
+                display: block;
+            }
+            .navbar-form .btn {
+                position: absolute;
+                right: 0;
+                top: 0;
+                border-radius: 0 6px 6px 0;
+            }
+            .navbar-form .form-control {
+                display: block;
+                width: 100%;
+            }
+        }
+        
+        @media screen and (max-width:1200px) {
+            .navbar {
+                z-index: 10;
+            }
+            .my-navbar {
+                position: fixed;
+                background-color: #ccc;
+                overflow: auto;
+                width: 70%;
+                top: 50px;
+                z-index: 9;
+                height: calc(100vh - 50px);
+                transition: 1s;
+            }
+            .my-navbar .navbar-nav {
+                margin: 0;
+            }
+            .leftIn {
+                left: -100%;
+            }
+            .rightIn {
+                right: -100%;
+            }
+            .my-navbar.leftIn.open {
+                left: 0;
+            }
+            .my-navbar.rightIn.open {
+                right: 0;
+            }
+            .navbar-form {
+                margin: 10px;
+            }
+            .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+                color: #ddd;
+            }
+        }
+    /* -------------------------------------------------- */
+
+
+    /* ---------- navbar 相關 ------------------------- */
+
+        /* 整體設定 */
+        .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+            color: #fff;
+            background-color: #080808;
+            height: 50px;
+        }
+        /* logo */
+        .navbar-brand{
+            padding: 9px 15px;
+        }
+
+        /* 大標題 */
+        .navbar-inverse .navbar-nav>li>a{
+            color: #fff;
+            padding-bottom: 0;
+        }
+
+        /* 下拉選單-大標題 */
+        .navbar-nav>li>.dropdown-menu {
+            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background-color: #444;
+        }
+        
+        /* 下拉選單-展開 */
+        .dropdown-menu>li>a {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.42857143;
+            white-space: nowrap;
+            color: #fff;
+            font-size: 17px;
+        }
+
+        /* 搜尋區塊 */
+        .navbar-form>.form-group>input[type=text], select, textarea  {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin: 0;
+            font-size: 18px;
+        }
+
+    /* -------------------------------------------------- */
+
+
+    /* 提示訊息 */
+    .alert{
+        margin-top: 50px; 
+        margin-bottom: -50px;
+    }
+
+
+    /* ---------- 未登入主頁 ------------------------- */
+        /* 未登入主頁大圖 */
+        .bgtest{
+            background-image: url(bgtest2.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin-top: 50px;
+            height: 660px;
+        }
+
+        /* 未登入主頁標題 */
+            /* @import url(https://fonts.googleapis.com/css?family=Bitter&display=swap);
+            .title-welcome{
+                font-size: 40px;
+                position:relative;
+                top:100px; left:200px;
+                color: #fff;
+                font-family: 'Bitter', serif;
+            }
+            @import url(https://fonts.googleapis.com/css?family=Courgette&display=swap);
+            .title-name{
+                font-size: 80px;
+                position:relative;
+                top:100px; left:230px;
+                color: #fff;
+                font-family: 'Courgette', cursive;
+            } */
+        /* --------------- */
+
+        /* 未登入主頁登入區塊 */
+        .login{
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin-top: 50px;
+            height: 550px;
+            weight: 210px;
+            border-radius: 10px;
+            padding: 1px 16px 0px 16px;
+        }
+
+        /* 未登入主頁登入按鈕 */
+        .btn-large-mktg {
+            font-size: 16px;
+            padding: 20px 32px;
+            background-color: #2ebc4f;
+            border-color: #2ebc4f;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            text-transform: none;
+        }
+        .btn-m5{
+            margin: 5px 0;
+        }
+
+        /* 未登入主頁點擊註冊 */
+        .left-sign{
+            position: absolute;
+            left: 35px;
+        }
+
+        /* 未登入主頁忘記密碼 */
+        .right-forgot{
+            position: absolute;
+            right: 35px;
+        }
+
+        /* 未登入主頁區塊 1 */
+        .bg1{
+            background-color: #e4e5e6;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin-top: 50px;
+            margin-bottom: 0;
+            height: 500px;
+            color: #263238;
+        }
+
+        /* 未登入主頁區塊 2 */
+        .bg2{
+            background-color: #263238;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 0;
+            height: 500px;
+            color: #e4e5e6;
+        }
+
+        /* 未登入主頁區塊 3 */
+        .bg3{
+            background-color: #e4e5e6;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 0;
+            height: 500px;
+            color: #263238;
+        }
+    /* -------------------------------------------------- */
+
+
+    /* 幻燈片 */
+    .slide {
+        margin-top: 50px;
+    }
+
+    /* 麵包屑 */
+    .breadcrumb {
+        padding: 8px 15px;
+        margin-top: 20px;
+        list-style: none;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+
+
+    /* ---------- footer 相關 ------------------------- */
+
+        /* 整體設定 */
+        .page-footer{
+            background-color: #263238;
+            color: rgba(255,255,255,.6);
+            padding: 16px 0;
+        }
+
+        /* 超連結 */
+        .page-footer>.footer-copyright>a{
+            color: #fff;
+        }
+
+    /* -------------------------------------------------- */
+    
+</style>
+
+
+
+<!-- navbar 區塊 -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">選單切換</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home"><img src="logo.png" width="32" height="32" class="img-circle"></a>
+        </div>
+        
+        <!-- 手機隱藏選單區 -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <!-- 左選單 -->
+            <ul class="nav navbar-nav">
+                <li><a href="./about">關於我們</a></li>
+                <li class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">返鄉相關 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">最新消息</a></li>
+                        <li><a href="#">創業補給</a></li>
+                        <li><a href="#">人物專訪</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">返鄉店家 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">店家</a></li>
+                        <li><a href="#">觀光景點</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">影像相關</a></li>
+                <li class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">會員專區 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">訂閱內容</a></li>
+                        <li><a href="#">會員資訊</a></li>
+                        <li><a href="#">前往募資</a></li>
+                    </ul>
+                </li>
+            </ul>
+        
+            <!-- 搜尋表單 -->
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="請輸入關鍵字">
+                </div>
+                <button type="submit" class="btn btn-default"><span class="fa fa-search"></span></button>
+            </form>
+        
+            <!-- 右選單 -->
+            <ul class="nav navbar-nav navbar-right">
+
+                <% if user_signed_in? %>
+                    <li><%= link_to '登出' , destroy_user_session_path() , method: :delete%></li>
+                <% else %>
+                    <li><%= link_to '登入', new_user_session_path(), method: :get%></li>
+                <% end %>
+
+                <li class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">繁體中文 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">繁體中文</a></li>
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">日本語</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 手機隱藏選單區結束 -->
+    </div>
+</nav>
+
+
+
+<!-- alert 區塊 -->
+<% if flash[:notice] %>
+    <div class="alert alert-info alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+
+
+
+<!-- 登入介面 -->
+<% if user_signed_in? %>
+    
+    <div id="carousel-id" class="carousel slide" data-ride="carousel">
+        <!-- 幻燈片小圓點區 -->
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#carousel-id" data-slide-to="0" class=""></li>
+            <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+            <li data-target="#carousel-id" data-slide-to="2" class="active"></li>
+        </ol> -->
+        <!-- 幻燈片主圖區 -->
+        <div class="carousel-inner">
+
+            <div class="item active">
+                <img src="banner.png" alt="">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1></h1>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 上下頁控制區 -->
+        <!-- <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
+
+        <!-- <a class="left carousel-control" href="#carousel-id" data-slide="prev"></a>
+        <a class="right carousel-control" href="#carousel-id" data-slide="next"></a> -->
+    </div>
+
+
+
+    
+    <div class="container">
+        <div class="row">
+            
+            <ol class="breadcrumb">
+                <li>
+                    <a href="./"><span class="fa fa-home"></span> 首頁</a>
+                </li>
+            </ol>
+
+        </div><!-- Row -->
+    </div><!--Container -->
+
+
+
+    <hr>
+
+    
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                
+                
+                
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">近期文章</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#">微型鳳凰創業貸款簡介</a></li>
+                        <li class="list-group-item"><a href="#">青年創業及啟動金貸款介紹</a></li>
+                        <li class="list-group-item"><a href="#">嘉義市力推返鄉創業 增加青創基地</a></li>
+                        <li class="list-group-item"><a href="#">返鄉青年帶來的農村質變</a></li>
+                        <li class="list-group-item"><a href="#">微型鳳凰創業基金</a></li>
+                        <li class="list-group-item"><a href="#">嘉義大翻轉 築起青年發聲平台</a></li>
+                        <li class="list-group-item"><a href="#">三波返鄉青年潮</a></li>
+                        <li class="list-group-item"><a href="#">放下工作陪爸媽種田-蔬果阿德</a></li>
+                    </ul>
+                </div>
+
+                
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">文章分類</h3>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">政策相關</a>
+                        <a href="#" class="list-group-item">返鄉相關</a>
+                        <a href="#" class="list-group-item">返鄉案例</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div><!-- Row -->
+    </div><!--Container -->
+    
+
+
+
+<!-- 未登入介面 -->
+<% else %>
+
+    <div class="bgtest">        
+        <div class="col-xs-0 col-sm-6">
+            <!-- <div class="row">
+                
+                <p class="title-welcome">Welcome to</p>
+                <p class="title-name">HomeWay</p> 
+
+            </div> -->
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-3">      
+            <div class="login">
+
+                <h2>登入</h2>
+
+                <br>
+
+                <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/VBPnNpg91aigBIAa/ttCmIKdI1LHp6/eXWID568fefL2V1ov3xntbmUhO4mflv3gSTgVsmGKNM9RSOKHXyB8w==" />
+                <div class="field">
+                    <label for="user_email">電子信箱</label><br />
+                    <input class="form-control" autocomplete="email" type="email" value="" name="user[email]" id="user_email" />
+                </div>
+
+                <br>
+
+                <div class="field">
+                    <label for="user_password">密碼</label><br />
+                    <input class="form-control" autocomplete="current-password" type="password" name="user[password]" id="user_password" />
+                </div>
+
+                <br>
+
+                <div class="field">
+                    <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+                    <label for="user_remember_me">記住我的資訊</label>
+                </div>
+
+                <br>
+
+                <div class="left-sign">
+                    沒有帳號？<a href="/users/sign_up">點擊註冊</a>
+                </div>
+                <div class="right-forgot">
+                    <a href="/users/password/new">忘記密碼？</a>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="actions">
+
+                    
+                    <!-- <input type="submit" name="commit" value="登入" data-disable-with="登入" />  -->
+
+
+                    <button class="btn-m5 btn-mktg btn-primary-mktg btn-large-mktg f4 btn-block my-3" type="submit" name="commit" value="登入" data-ga-click="Signup, Attempt, location:home hero">登入</button>
+
+                </div>
+                </form>
+
+                                    
+                
+
+                                
+                
+            </div>      
+        </div>
+        <div class="col-xs-12 col-sm-3">  
+        </div>    
+    </div>
+
+
+
+    <div class="row"> 
+        <div class="jumbotron bg1">
+            <div class="container">                
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                
+                    <h1>名稱由來</h1>
+                    <br>
+                    <p>我們希望這個網站能提供返鄉的相關資訊，讓想返鄉的青年們能更方便的接受到相關訊息，讓他們覺得返鄉沒有以往那麼麻煩，如同一條直通家鄉的捷徑一般，於是將網站命名為"Homeway"</p>
+                
+                </div>
+            </div>
+        </div>
+    </div><!-- Row -->
+    
+
+
+    <div class="row"> 
+        <div class="jumbotron bg2">
+            <div class="container">                
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                
+                    <h1>發想理念</h1>
+                    <br>
+                    <p>由於嘉義市近年來人口外流日趨嚴重，使得嘉義市逐漸邁向高齡化社會，我們希望能透過一些辦法，讓青年們願意返回自己的家鄉工作、創業，使嘉義市經濟活絡、創造更多就業機會，進而緩解這個現象。</p>
+                
+                </div>
+            </div>
+        </div>
+    </div><!-- Row -->
+
+
+
+    <div class="row"> 
+        <div class="jumbotron bg3">
+            <div class="container">                
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                
+                    <h1>未來展望</h1>
+                    <br>
+                    <p>我們希望能藉由架設網站、宣傳的方式，來讓更多人知道這些嘉義返鄉青年們的故事與創業過程。讓回來嘉義開業的返鄉青年們，有個讓社會大眾能看見他們的平台，透過舉辦活動、創客課程，增加他們的知名度，進而增加嘉義市的觀光景點。</p>
+                
+                </div>
+            </div>
+        </div>
+    </div><!-- Row -->
+<% end %>
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="./"> Homeway.idv.tw</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+
+
+
+
+
+
